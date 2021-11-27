@@ -1,0 +1,11 @@
+# Python folders
+__pycache__
+.venv
+
+# VS Code folder
+.vscode
+
+# Docker files
+Dockerfile
+docker-compose
+.dockerignore

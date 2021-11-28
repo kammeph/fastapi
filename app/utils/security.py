@@ -18,7 +18,7 @@ class Token(BaseModel):
     token_type: str
 
 oauth2_scheme = OAuth2PasswordBearer(
-    tokenUrl="api/users/auth"
+    tokenUrl="api/auth"
 )
 
 async def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):

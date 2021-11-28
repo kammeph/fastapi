@@ -1,9 +1,9 @@
 from dotenv.main import find_dotenv
 from fastapi import FastAPI, APIRouter, Request, status
-from fastapi.encoders import jsonable_encoder
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
 from user.routes import users
+from authentication.routes import auth
 from dotenv import load_dotenv
 from utils.providers import provider
 from pythondi import configure
@@ -13,6 +13,7 @@ configure(provider=provider)
 
 router = APIRouter(prefix="/api")
 router.include_router(users)
+router.include_router(auth)
 
 app = FastAPI(
     title="FastAPI",
